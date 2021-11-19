@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 插入 reset CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- 插入 Bootstrap 4 的 CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- 插入自訂的 CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <title>高雄市旅遊資訊網</title>
+  </head>
+  <body>
+    <div class="container-fluid p-5 bg-main">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-8 text-center text-shadow">
+          <h1 class="text-light">高雄市旅遊資訊網</h1>
+          <p class="text-light display-5 m-0">Kaohsiung City Travel Info</p>
+          <select class="areaList custom-select bg-opacity mt-4 mb-5">
+            <!-- 選單內容會 DOM 到這裡 -->
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-10 col-md-8 pt-2 bg-light card-hotArea text-center">
+          <p class="text-black-50 mb-2">💯 熱門景點 💯</p>
+          <!-- 當頁面寬度大於 576 px 時，顯示這個 div 裡面的按鈕 -->
+          <div class="hotBtn d-none d-sm-block">
+            <button
+              type="button"
+              value="苓雅區"
+              class="mx-2 mb-3 btn btn-info rounded-pill"
+            >
+              苓雅區
+            </button>
+            <button
+              type="button"
+              value="三民區"
+              class="mx-2 mb-3 btn btn-info rounded-pill"
+            >
+              三民區
+            </button>
+            <button
+              type="button"
+              value="新興區"
+              class="mx-2 mb-3 btn btn-info rounded-pill"
+            >
+              新興區
+            </button>
+            <button
+              type="button"
+              value="鼓山區"
+              class="mx-2 mb-3 btn btn-info rounded-pill"
+            >
+              鼓山區
+            </button>
+          </div>
+          <!-- 當頁面寬度小於 576 px 時，顯示這個 div 裡面的按鈕 -->
+          <div class="hotBtn d-block d-sm-none px-4">
+            <button
+              type="button"
+              value="苓雅區"
+              class="mb-3 btn btn-block btn-info rounded-pill"
+            >
+              苓雅區
+            </button>
+            <button
+              type="button"
+              value="三民區"
+              class="mb-3 btn btn-block btn-info rounded-pill"
+            >
+              三民區
+            </button>
+            <button
+              type="button"
+              value="新興區"
+              class="mb-3 btn btn-block btn-info rounded-pill"
+            >
+              新興區
+            </button>
+            <button
+              type="button"
+              value="鼓山區"
+              class="mb-3 btn btn-block btn-info rounded-pill"
+            >
+              鼓山區
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="container">
+      <div class="row">
+        <h3 class="areaTitle col text-info text-center mb-4">全部景點</h3>
+      </div>
+      <div class="areaContent row mb-4 align-items-stretch"><!-- 旅遊資訊卡片會 DOM 到這裡 --></div>
+    </div>
+    <footer class="container-fluid bg-secondary text-center p-4">
+      <p class="m-0 pb-2 text-light">學 js 學到腦袋好痛 by 謝宗佑</p>
+    </footer>
+  </body>
+</html>
