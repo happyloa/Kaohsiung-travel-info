@@ -46,8 +46,8 @@ function addAreaMenu() {
   //避免 Zone 物件的選項重複（一個鄉鎮區只會在選單內顯示一次）（ES6 語法）
   //參考資料：https://juejin.cn/post/6844903951909781517
   let noRepeatAllArea = Array.from(new Set(allArea));
-  //預先建立一個選單選項放在選單上，提升使用者體驗
-  let str = `<option selected> - 請選擇一個區域 - </option>`;
+  //預先建立一個選單選項放在選單上，提升使用者體驗，同時加入 disabled 屬性來避免使用者選擇它
+  let str = `<option selected disabled> - 請選擇一個區域 - </option>`;
   //利用迴圈在重複的鄉鎮區內抓出一個
   for (let i = 0; i < noRepeatAllArea.length; i++) {
     //產生選單選項並賦予 areaListItem 類別
