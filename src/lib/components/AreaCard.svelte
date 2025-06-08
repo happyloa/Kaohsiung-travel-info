@@ -3,7 +3,7 @@
 </script>
 
 <li class="p-2 rounded-lg">
-  <article class="shadow rounded-lg bg-white flex flex-col">
+  <article class="shadow rounded-lg bg-white dark:bg-gray-800 flex flex-col">
     <header
       class="relative rounded-lg p-3 flex justify-between items-end bg-cover bg-center h-40"
       style="background-image:url({info.Picture1})"
@@ -21,7 +21,7 @@
         >{info.Zone}</span
       >
     </header>
-    <footer class="text-sm p-3 text-gray-800 space-y-2">
+    <footer class="text-sm p-3 text-gray-800 dark:text-gray-200 space-y-2">
       <p><i class="fas fa-clock"></i> {info.Opentime}</p>
       <p><i class="fas fa-home"></i> {info.Add}</p>
       <p><i class="fas fa-phone-alt"></i> {info.Tel}</p>

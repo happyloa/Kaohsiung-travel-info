@@ -49,9 +49,9 @@
 </header>
 <main class="container mx-auto pb-8">
   <div
-    class="-mt-10 bg-white/75 backdrop-blur mx-2 shadow rounded-3xl text-center py-4 px-6"
+    class="-mt-10 bg-white/75 dark:bg-gray-800/75 backdrop-blur mx-2 shadow rounded-3xl text-center py-4 px-6"
   >
-    <h2 class="text-gray-500 mb-2 text-2xl">💯 熱門景點 💯</h2>
+    <h2 class="text-gray-500 dark:text-gray-300 mb-2 text-2xl">💯 熱門景點 💯</h2>
     <HotButtons {hotAreas} onSelect={handleSelect} />
   </div>
   <h3 class="text-center my-4 text-2xl font-bold">

@@ -8,7 +8,7 @@
 >
   {#each hotAreas as area}
     <button
-      class="rounded-full px-4 py-1 bg-blue-500 text-white hover:bg-blue-600 w-full sm:w-auto"
+      class="rounded-full px-4 py-1 bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800 w-full sm:w-auto"
       on:click={() => onSelect?.(area)}
     >
       {area}
