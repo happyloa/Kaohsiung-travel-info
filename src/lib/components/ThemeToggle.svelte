@@ -7,6 +7,9 @@
     if (stored === 'dark') {
       dark = true;
       document.documentElement.classList.add('dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+      document.documentElement.classList.remove('dark');
     }
   });
 
