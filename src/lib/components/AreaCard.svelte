@@ -13,14 +13,14 @@
     >
       {#if info.Ticketinfo === "免費參觀"}
         <div
-          class="absolute top-3 left-3 rounded bg-green-600 px-2 py-1 text-sm text-white"
+          class="absolute top-3 left-3 rounded bg-green-700 px-2 py-1 text-sm text-white"
         >
           <i class="fas fa-tags"></i> 免費
         </div>
       {/if}
       <p class="mt-4 text-white text-shadow">{info.Name}</p>
       <span
-        class="rounded bg-red-500 px-2 py-1 text-sm text-white whitespace-nowrap"
+        class="rounded bg-red-700 px-2 py-1 text-sm text-white whitespace-nowrap"
         >{info.Zone}</span
       >
     </header>
