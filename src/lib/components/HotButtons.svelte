@@ -11,7 +11,7 @@
 >
   {#each hotAreas as area}
     <button
-      class="w-full sm:w-auto rounded-full px-4 py-1 bg-blue-700 hover:bg-blue-900 text-white"
+      class="w-full sm:w-auto rounded-full px-4 py-1 bg-blue-700 hover:bg-blue-900 text-white dark:bg-blue-600 dark:hover:bg-blue-800"
       on:click={() => onSelect?.(area)}
     >
       {area}

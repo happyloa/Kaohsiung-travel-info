@@ -53,10 +53,10 @@
 
 <!-- 頁面頂部 -->
 <header
-  class="bg-[url('/bg.webp')] bg-cover bg-center p-8 sm:p-12 text-center text-white"
+  class="bg-[url('/bg.webp')] bg-cover bg-center p-8 sm:p-12 text-center text-white dark:bg-gray-900"
 >
-  <h1 class="text-shadow text-3xl sm:text-4xl font-bold">高雄市旅遊資訊網</h1>
-  <p class="text-shadow text-2xl">Kaohsiung City Travel Info</p>
+  <h1 class="text-shadow text-3xl sm:text-4xl font-bold dark:text-gray-100">高雄市旅遊資訊網</h1>
+  <p class="text-shadow text-2xl dark:text-gray-300">Kaohsiung City Travel Info</p>
   <AreaSelect {areas} {selected} onChange={handleSelect} />
 </header>
 <!-- 主要內容 -->
@@ -67,7 +67,7 @@
     <h2 class="mb-2 text-2xl text-gray-500 dark:text-gray-300">💯 熱門景點 💯</h2>
     <HotButtons {hotAreas} onSelect={handleSelect} />
   </div>
-  <h3 class="my-4 text-center text-2xl font-bold">
+  <h3 class="my-4 text-center text-2xl font-bold dark:text-gray-100">
     {selected || "全部景點"}
   </h3>
   {#if filtered.length > 0}
@@ -77,6 +77,6 @@
       {/each}
     </ul>
   {:else}
-    <p class="my-4 text-center text-2xl">目前沒有任何景點</p>
+    <p class="my-4 text-center text-2xl dark:text-gray-300">目前沒有任何景點</p>
   {/if}
 </main>
