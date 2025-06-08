@@ -21,7 +21,7 @@
         >{info.Zone}</span
       >
     </header>
-    <footer class="text-sm p-3 text-gray-800 dark:text-gray-200 space-y-2">
+    <footer class="text-sm p-3 text-gray-800 dark:text-gray-200 dark:bg-gray-700 space-y-2">
       <p><i class="fas fa-clock"></i> {info.Opentime}</p>
       <p><i class="fas fa-home"></i> {info.Add}</p>
       <p><i class="fas fa-phone-alt"></i> {info.Tel}</p>

@@ -9,7 +9,7 @@
 </script>
 
 <select
-  class="w-full mt-4 mb-5 border rounded p-2 bg-white/80 backdrop-blur text-gray-700 dark:bg-gray-700/80 dark:border-gray-600 dark:text-gray-200"
+  class="w-full mt-4 mb-5 border rounded p-2 bg-white backdrop-blur text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
   on:change={handleChange}
   bind:value={selected}
 >
