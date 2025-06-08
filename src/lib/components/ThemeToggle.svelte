@@ -6,15 +6,11 @@
     const stored = localStorage.getItem('theme');
     if (stored === 'dark') {
       dark = true;
-      document.documentElement.classList.add('dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-      document.documentElement.classList.remove('dark');
     }
+    updateTheme();
   });
 
-  function toggle() {
-    dark = !dark;
+  function updateTheme() {
     if (dark) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -22,6 +18,11 @@
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
+  }
+
+  function toggle() {
+    dark = !dark;
+    updateTheme();
   }
 </script>
 
