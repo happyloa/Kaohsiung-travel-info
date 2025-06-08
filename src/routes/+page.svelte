@@ -38,17 +38,17 @@
   }
 </script>
 
-<div class="p-5 bg-gray-700 text-center text-white">
-  <h1 class="text-2xl font-bold">高雄市旅遊資訊網</h1>
-  <p class="text-xl">Kaohsiung City Travel Info</p>
+<div class="p-8 sm:p-12 text-center text-white bg-[url('/bg.webp')] bg-cover bg-center">
+  <h1 class="text-shadow text-3xl font-bold">高雄市旅遊資訊網</h1>
+  <p class="text-shadow text-xl">Kaohsiung City Travel Info</p>
   <AreaSelect {areas} {selected} onChange={handleSelect} />
 </div>
-<div class="container mx-auto my-4">
-  <div class="text-center text-gray-700">
+<div class="container mx-auto">
+  <div class="relative -mt-10 bg-white/80 backdrop-blur shadow rounded-3xl text-center py-4 px-6">
     <p class="text-gray-500 mb-2">💯 熱門景點 💯</p>
     <HotButtons hotAreas={hotAreas} onSelect={handleSelect} />
   </div>
-  <h3 class="text-info text-center mb-4">{selected || '全部景點'}</h3>
+  <h3 class="text-info text-center my-4">{selected || '全部景點'}</h3>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {#each filtered as item (item.Name)}
       <AreaCard info={item} />
