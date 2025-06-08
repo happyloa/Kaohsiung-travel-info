@@ -54,7 +54,7 @@
     <h2 class="text-gray-600 dark:text-gray-100 mb-2 text-2xl">💯 熱門景點 💯</h2>
     <HotButtons {hotAreas} onSelect={handleSelect} />
   </div>
-  <h3 class="text-center my-4 text-2xl font-bold">
+  <h3 class="text-center my-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
     {selected || "全部景點"}
   </h3>
   {#if filtered.length > 0}
@@ -64,6 +64,6 @@
       {/each}
     </ul>
   {:else}
-    <p class="text-center my-4 text-2xl">目前沒有任何景點</p>
+    <p class="text-center my-4 text-2xl text-gray-800 dark:text-gray-100">目前沒有任何景點</p>
   {/if}
 </main>
