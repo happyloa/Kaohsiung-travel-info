@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { Writable } from 'svelte/store';
   export let areas: string[] = [];
   export let selected: string = '';
   export let onChange: (value: string) => void;
@@ -9,9 +8,14 @@
   }
 </script>
 
-<select class="areaList custom-select bg-opacity mt-4 mb-5" on:change={handleChange} bind:value={selected}>
+<select
+  class="w-full mt-4 mb-5 border rounded p-2 bg-white/80 backdrop-blur text-gray-700"
+  on:change={handleChange}
+  bind:value={selected}
+>
   <option disabled selected value=""> - 請選擇一個區域 - </option>
   {#each areas as area}
     <option value={area}>{area}</option>
   {/each}
 </select>
+
