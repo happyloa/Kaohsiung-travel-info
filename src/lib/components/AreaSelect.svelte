@@ -15,7 +15,7 @@
 
 <!-- 區域選擇下拉選單 -->
 <select
-  class="w-full mt-4 mb-5 p-2 border rounded bg-white/80 backdrop-blur text-gray-700"
+  class="w-full mt-4 mb-5 p-2 border rounded bg-white/80 backdrop-blur text-gray-700 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-200"
   on:change={handleChange}
   bind:value={selected}
 >

@@ -62,9 +62,9 @@
 <!-- 主要內容 -->
 <main class="container mx-auto pb-8">
   <div
-    class="-mt-10 mx-2 text-center rounded-3xl shadow bg-white/75 backdrop-blur py-4 px-6"
+    class="-mt-10 mx-2 text-center rounded-3xl shadow bg-white/75 backdrop-blur dark:bg-gray-700/70 py-4 px-6"
   >
-    <h2 class="mb-2 text-2xl text-gray-500">💯 熱門景點 💯</h2>
+    <h2 class="mb-2 text-2xl text-gray-500 dark:text-gray-300">💯 熱門景點 💯</h2>
     <HotButtons {hotAreas} onSelect={handleSelect} />
   </div>
   <h3 class="my-4 text-center text-2xl font-bold">

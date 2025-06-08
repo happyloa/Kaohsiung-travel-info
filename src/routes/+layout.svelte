@@ -1,5 +1,7 @@
 <script>
   import "../app.css";
+  import DarkModeToggle from "$lib/components/DarkModeToggle.svelte";
+  import { isDark } from "$lib/stores/theme";
 </script>
 
 <svelte:head>
@@ -8,3 +10,4 @@
 </svelte:head>
 
 <slot />
+<DarkModeToggle />
