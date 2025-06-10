@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/happyloa/Kaohsiung-travel-info/refs/heads/master/static/thumbnail.webp)
+
 # 高雄市旅遊資訊網 (SvelteKit)
 
 本專案將原始的 HTML/CSS/JS 版本重構為 [SvelteKit](https://kit.svelte.dev/) 並整合 [Tailwind CSS](https://tailwindcss.com/)。
