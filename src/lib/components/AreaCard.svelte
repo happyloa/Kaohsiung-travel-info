@@ -5,7 +5,7 @@
 
 <!-- 單一景點卡片 -->
 <li class="rounded-lg p-2">
-  <article class="flex flex-col rounded-lg border border-transparent bg-white shadow transition dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100">
+  <article class="flex flex-col rounded-lg border border-transparent bg-white shadow transition">
     <!-- 圖片與區域標籤 -->
     <header
       class="relative flex justify-between items-end h-40 p-3 rounded-lg bg-cover bg-center"
@@ -25,7 +25,7 @@
       >
     </header>
     <!-- 營業資訊 -->
-    <footer class="space-y-2 p-3 text-sm text-gray-800 dark:text-gray-100">
+    <footer class="space-y-2 p-3 text-sm text-gray-800">
       <p><i class="fas fa-clock"></i> {info.Opentime}</p>
       <p><i class="fas fa-home"></i> {info.Add}</p>
       <p><i class="fas fa-phone-alt"></i> {info.Tel}</p>

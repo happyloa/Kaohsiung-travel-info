@@ -82,19 +82,15 @@
 </script>
 
 <!-- 頁面頂部 -->
-<header
-  class="bg-[url('/bg.webp')] bg-cover bg-center p-8 sm:p-12 text-center text-white dark:bg-gray-800/90"
->
+<header class="bg-[url('/bg.webp')] bg-cover bg-center p-8 sm:p-12 text-center text-white">
   <h1 class="text-shadow text-3xl sm:text-4xl font-bold">高雄市旅遊資訊網</h1>
   <p class="text-shadow text-2xl">Kaohsiung City Travel Info</p>
   <AreaSelect {areas} {selected} onChange={handleSelect} />
 </header>
 <!-- 主要內容 -->
 <main class="container mx-auto pb-8">
-  <div
-    class="-mt-10 mx-2 text-center rounded-3xl shadow bg-white/75 backdrop-blur py-4 px-6 dark:bg-gray-800/80"
-  >
-    <h2 class="mb-2 text-2xl text-gray-500 dark:text-gray-200">💯 熱門景點 💯</h2>
+  <div class="-mt-10 mx-2 text-center rounded-3xl shadow bg-white/75 backdrop-blur py-4 px-6">
+    <h2 class="mb-2 text-2xl text-gray-600">💯 熱門景點 💯</h2>
     <HotButtons {hotAreas} onSelect={handleSelect} />
   </div>
   <h3 class="my-4 text-center text-2xl font-bold">
@@ -107,37 +103,51 @@
       {/each}
     </ul>
     {#if totalPages > 1}
-      <nav class="mt-6 flex flex-wrap items-center justify-center gap-2">
-        <button
-          class="rounded-full border border-blue-600 px-3 py-1 text-sm text-blue-600 transition cursor-pointer hover:bg-blue-600 hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-400 dark:hover:text-gray-900"
-          on:click={() => goToPage(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          上一頁
-        </button>
-        {#each Array.from({ length: totalPages }) as _, index}
-          {@const page = index + 1}
-          <button
-            class={`rounded-full px-3 py-1 text-sm transition cursor-pointer ${
-              page === currentPage
-                ? "bg-blue-600 text-white dark:bg-blue-400 dark:text-gray-900"
-                : "border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-400 dark:hover:text-gray-900"
-            }`}
-            on:click={() => goToPage(page)}
-          >
-            {page}
-          </button>
-        {/each}
-        <button
-          class="rounded-full border border-blue-600 px-3 py-1 text-sm text-blue-600 transition cursor-pointer hover:bg-blue-600 hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-400 dark:hover:text-gray-900"
-          on:click={() => goToPage(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          下一頁
-        </button>
+      <nav class="mt-8 flex justify-center" aria-label="景點分頁">
+        <ul class="inline-flex items-stretch overflow-hidden rounded-full border border-blue-200 bg-white shadow">
+          <li>
+            <button
+              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-blue-600 transition hover:bg-blue-50 cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
+              on:click={() => goToPage(currentPage - 1)}
+              disabled={currentPage === 1}
+              type="button"
+            >
+              <span class="hidden sm:inline">上一頁</span>
+              <span aria-hidden="true">«</span>
+            </button>
+          </li>
+          {#each Array.from({ length: totalPages }) as _, index}
+            {@const page = index + 1}
+            <li>
+              <button
+                class={`px-4 py-2 text-sm font-semibold transition cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-400 ${
+                  page === currentPage
+                    ? "bg-blue-600 text-white shadow-inner"
+                    : "text-blue-600 hover:bg-blue-50"
+                }`}
+                type="button"
+                aria-current={page === currentPage ? "page" : undefined}
+                on:click={() => goToPage(page)}
+              >
+                {page}
+              </button>
+            </li>
+          {/each}
+          <li>
+            <button
+              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-blue-600 transition hover:bg-blue-50 cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
+              on:click={() => goToPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              type="button"
+            >
+              <span aria-hidden="true">»</span>
+              <span class="hidden sm:inline">下一頁</span>
+            </button>
+          </li>
+        </ul>
       </nav>
     {/if}
   {:else}
-    <p class="my-4 text-center text-2xl dark:text-gray-200">目前沒有任何景點</p>
+    <p class="my-4 text-center text-2xl">目前沒有任何景點</p>
   {/if}
 </main>
