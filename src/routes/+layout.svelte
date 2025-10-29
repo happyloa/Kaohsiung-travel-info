@@ -4,35 +4,84 @@
 
   // Svelte 生命週期，用來初始化主題設定
   import { onMount } from "svelte";
+  import { browser } from "$app/environment";
 
   // 目前使用的主題（light 或 dark）
   let theme: "light" | "dark" = "light";
+  // 是否已有使用者偏好（只要使用者按過切換或儲存過主題就視為 true）
+  let hasStoredPreference = false;
+  // 用來監聽系統主題變化的媒體查詢物件
+  let mediaQuery: MediaQueryList | null = null;
 
-  // 根據傳入的主題名稱套用到 <html> 節點，並記錄於 localStorage
-  function applyTheme(next: "light" | "dark") {
-    theme = next;
+  // 將主題套用到文件節點
+  function updateDomTheme(next: "light" | "dark") {
+    if (!browser) return;
     const root = document.documentElement;
     const isDark = next === "dark";
     root.classList.toggle("dark", isDark);
     document.body?.classList.toggle("dark", isDark);
-    localStorage.setItem("theme", next);
+  }
+
+  // 安全地讀取 localStorage 中的主題設定
+  function readStoredTheme(): "light" | "dark" | null {
+    if (!browser) return null;
+    try {
+      const stored = localStorage.getItem("theme");
+      return stored === "dark" || stored === "light" ? stored : null;
+    } catch (error) {
+      console.warn("無法讀取主題偏好：", error);
+      return null;
+    }
+  }
+
+  // 安全地寫入主題設定
+  function persistTheme(next: "light" | "dark") {
+    if (!browser) return;
+    try {
+      localStorage.setItem("theme", next);
+    } catch (error) {
+      console.warn("無法儲存主題偏好：", error);
+    }
+  }
+
+  // 套用主題，並視情況儲存偏好
+  function applyTheme(next: "light" | "dark", options: { persist?: boolean } = {}) {
+    theme = next;
+    updateDomTheme(next);
+    if (options.persist ?? true) {
+      persistTheme(next);
+    }
   }
 
   // 主題切換事件處理：在深色與淺色之間切換
   function toggleTheme() {
+    hasStoredPreference = true;
     applyTheme(theme === "dark" ? "light" : "dark");
+  }
+
+  // 當系統主題改變且使用者未指定偏好時，同步變更
+  function handleSystemThemeChange(event: MediaQueryListEvent) {
+    if (!hasStoredPreference) {
+      applyTheme(event.matches ? "dark" : "light", { persist: false });
+    }
   }
 
   // 元件掛載後，載入使用者偏好或系統偏好並套用主題
   onMount(() => {
-    const stored = localStorage.getItem("theme");
-    if (stored === "dark" || stored === "light") {
-      applyTheme(stored);
-      return;
-    }
+    if (!browser) return;
 
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(prefersDark ? "dark" : "light");
+    const stored = readStoredTheme();
+    hasStoredPreference = stored !== null;
+
+    mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const initialTheme = stored ?? (mediaQuery.matches ? "dark" : "light");
+    applyTheme(initialTheme, { persist: hasStoredPreference });
+
+    mediaQuery.addEventListener("change", handleSystemThemeChange);
+
+    return () => {
+      mediaQuery?.removeEventListener("change", handleSystemThemeChange);
+    };
   });
 </script>
 
