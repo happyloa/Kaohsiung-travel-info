@@ -1,5 +1,5 @@
 <script lang="ts">
-  // 常用熱門區域
+  // 常用熱門區域，供使用者快速切換
   export let hotAreas: string[] = [];
   // 點擊按鈕後回傳選擇的區域
   export let onSelect: (value: string) => void;
@@ -11,7 +11,7 @@
 >
   {#each hotAreas as area}
     <button
-      class="w-full sm:w-auto rounded-full px-4 py-1 bg-blue-700 hover:bg-blue-900 text-white"
+      class="w-full sm:w-auto rounded-full px-4 py-1 bg-blue-700 text-white transition hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-400 dark:text-gray-900"
       on:click={() => onSelect?.(area)}
     >
       {area}
