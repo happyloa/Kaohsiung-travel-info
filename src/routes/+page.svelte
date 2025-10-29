@@ -109,7 +109,7 @@
     {#if totalPages > 1}
       <nav class="mt-6 flex flex-wrap items-center justify-center gap-2">
         <button
-          class="rounded-full border border-blue-600 px-3 py-1 text-sm text-blue-600 transition hover:bg-blue-600 hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-400 dark:hover:text-gray-900"
+          class="rounded-full border border-blue-600 px-3 py-1 text-sm text-blue-600 transition cursor-pointer hover:bg-blue-600 hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-400 dark:hover:text-gray-900"
           on:click={() => goToPage(currentPage - 1)}
           disabled={currentPage === 1}
         >
@@ -118,7 +118,7 @@
         {#each Array.from({ length: totalPages }) as _, index}
           {@const page = index + 1}
           <button
-            class={`rounded-full px-3 py-1 text-sm transition ${
+            class={`rounded-full px-3 py-1 text-sm transition cursor-pointer ${
               page === currentPage
                 ? "bg-blue-600 text-white dark:bg-blue-400 dark:text-gray-900"
                 : "border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-400 dark:hover:text-gray-900"
@@ -129,7 +129,7 @@
           </button>
         {/each}
         <button
-          class="rounded-full border border-blue-600 px-3 py-1 text-sm text-blue-600 transition hover:bg-blue-600 hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-400 dark:hover:text-gray-900"
+          class="rounded-full border border-blue-600 px-3 py-1 text-sm text-blue-600 transition cursor-pointer hover:bg-blue-600 hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-400 dark:hover:text-gray-900"
           on:click={() => goToPage(currentPage + 1)}
           disabled={currentPage === totalPages}
         >

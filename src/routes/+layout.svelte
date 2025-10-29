@@ -12,7 +12,9 @@
   function applyTheme(next: "light" | "dark") {
     theme = next;
     const root = document.documentElement;
-    root.classList.toggle("dark", next === "dark");
+    const isDark = next === "dark";
+    root.classList.toggle("dark", isDark);
+    document.body?.classList.toggle("dark", isDark);
     localStorage.setItem("theme", next);
   }
 
@@ -43,7 +45,7 @@
 
 <!-- 右下角懸浮的主題切換按鈕 -->
 <button
-  class="fixed bottom-6 right-6 rounded-full bg-blue-600 px-4 py-3 text-white shadow-lg transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:bg-yellow-400 dark:text-gray-900 dark:hover:bg-yellow-300"
+  class="fixed bottom-6 right-6 rounded-full bg-blue-600 px-4 py-3 text-white shadow-lg transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:bg-yellow-400 dark:text-gray-900 dark:hover:bg-yellow-300 cursor-pointer"
   type="button"
   on:click={toggleTheme}
   aria-label={`切換至${theme === "dark" ? "淺色" : "深色"}模式`}
