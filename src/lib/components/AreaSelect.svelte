@@ -1,12 +1,12 @@
 <script lang="ts">
-  // 所有區域名稱
+  // 所有區域名稱清單，作為下拉選單選項
   export let areas: string[] = [];
-  // 目前選取的區域
+  // 目前選取的區域值
   export let selected: string = '';
-  // 區域變更事件
+  // 區域變更事件，父層會傳入 callback
   export let onChange: (value: string) => void;
 
-  // 下拉選單值改變時觸發
+  // 下拉選單值改變時觸發，並將選取結果回傳給父層
   function handleChange(e: Event) {
     const target = e.target as HTMLSelectElement;
     onChange?.(target.value);
@@ -15,7 +15,7 @@
 
 <!-- 區域選擇下拉選單 -->
 <select
-  class="w-full mt-4 mb-5 p-2 border rounded bg-white/80 backdrop-blur text-gray-700"
+  class="w-full mt-4 mb-5 p-2 border rounded bg-white/80 backdrop-blur text-gray-700 transition"
   on:change={handleChange}
   bind:value={selected}
 >

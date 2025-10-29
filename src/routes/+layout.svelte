@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  // 引入全域樣式，確保所有頁面共用 Tailwind 設定
   import "../app.css";
 </script>
 
