@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/happyloa/Kaohsiung-travel-info/refs/heads/master/static/thumbnail.webp)
+![](https://raw.githubusercontent.com/happyloa/Kaohsiung-travel-info/refs/heads/master/static/thumb.webp)
 
 # 高雄市旅遊資訊網 (SvelteKit)
 
