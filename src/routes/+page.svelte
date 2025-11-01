@@ -19,6 +19,9 @@
 
   // 從 API 取得的全部資料
   let data: Info[] = [];
+  // 載入狀態與錯誤訊息
+  let isLoading = true;
+  let errorMessage: string | null = null;
   // 所有區域名稱
   let areas: string[] = [];
   // 目前選取的區域
@@ -38,13 +41,23 @@
 
   // 初始化載入資料
   onMount(async () => {
-    const res = await fetch(
-      "https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json"
-    );
-    const json = await res.json();
-    data = json.result.records;
-    areas = Array.from(new Set(data.map((d: Info) => d.Zone)));
-    updateFiltered();
+    try {
+      const res = await fetch(
+        "https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json"
+      );
+      if (!res.ok) {
+        throw new Error("無法取得旅遊資訊，請稍後再試。");
+      }
+      const json = await res.json();
+      data = json.result.records;
+      areas = Array.from(new Set(data.map((d: Info) => d.Zone)));
+      updateFiltered();
+    } catch (error) {
+      errorMessage =
+        error instanceof Error ? error.message : "載入資料時發生未知錯誤。";
+    } finally {
+      isLoading = false;
+    }
   });
 
   // 依選取區域更新篩選結果
@@ -96,7 +109,39 @@
   <h3 class="my-4 text-center text-2xl font-bold">
     {selected || "全部景點"}
   </h3>
-  {#if pageItems.length > 0}
+  {#if isLoading}
+    <div
+      class="my-12 flex flex-col items-center justify-center gap-3 text-blue-600"
+      role="status"
+      aria-live="polite"
+    >
+      <span class="sr-only">載入中</span>
+      <svg
+        class="h-12 w-12 animate-spin text-blue-600"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <circle
+          class="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        />
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+        />
+      </svg>
+      <p class="text-lg font-medium">資料載入中，請稍候…</p>
+    </div>
+  {:else if errorMessage}
+    <p class="my-4 text-center text-xl text-red-600">{errorMessage}</p>
+  {:else if pageItems.length > 0}
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {#each pageItems as item (item.Name)}
         <AreaCard info={item} />
@@ -107,7 +152,8 @@
         <ul class="inline-flex items-stretch overflow-hidden rounded-full border border-blue-200 bg-white shadow">
           <li>
             <button
-              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-blue-600 transition hover:bg-blue-50 cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
+              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-blue-600 transition hover:bg-blue-50
+                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
               on:click={() => goToPage(currentPage - 1)}
               disabled={currentPage === 1}
               type="button"
@@ -120,7 +166,8 @@
             {@const page = index + 1}
             <li>
               <button
-                class={`px-4 py-2 text-sm font-semibold transition cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-400 ${
+                class={`px-4 py-2 text-sm font-semibold transition cursor-pointer focus-visible:outline focus-visible:outline-2
+                  focus-visible:outline-blue-400 ${
                   page === currentPage
                     ? "bg-blue-600 text-white shadow-inner"
                     : "text-blue-600 hover:bg-blue-50"
@@ -135,7 +182,8 @@
           {/each}
           <li>
             <button
-              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-blue-600 transition hover:bg-blue-50 cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
+              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-blue-600 transition hover:bg-blue-50
+                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
               on:click={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
               type="button"
