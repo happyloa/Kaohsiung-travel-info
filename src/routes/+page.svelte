@@ -142,6 +142,7 @@
               on:click={() => goToPage(currentPage - 1)}
               disabled={currentPage === 1}
               type="button"
+              aria-label="上一頁"
             >
               <span class="hidden sm:inline">上一頁</span>
               <span aria-hidden="true">«</span>
@@ -172,6 +173,7 @@
               on:click={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
               type="button"
+              aria-label="下一頁"
             >
               <span aria-hidden="true">»</span>
               <span class="hidden sm:inline">下一頁</span>
