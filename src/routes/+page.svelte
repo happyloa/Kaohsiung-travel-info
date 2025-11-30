@@ -5,6 +5,7 @@
   import AreaSelect from "$lib/components/AreaSelect.svelte";
   import HotButtons from "$lib/components/HotButtons.svelte";
   import AreaCard from "$lib/components/AreaCard.svelte";
+  import LoadingSkeleton from "$lib/components/LoadingSkeleton.svelte";
 
   // 景點資訊型別
   interface Info {
@@ -115,35 +116,14 @@
     {selected || "全部景點"}
   </h3>
   {#if isLoading}
-    <div
-      class="my-12 flex flex-col items-center justify-center gap-3 text-indigo-500"
-      role="status"
-      aria-live="polite"
-    >
+    <section class="my-12 space-y-5" role="status" aria-live="polite">
+      <div class="text-center text-indigo-600">
+        <p class="text-lg font-semibold">資料載入中，請稍候…</p>
+        <p class="text-sm text-slate-500">正在取得高雄各區景點資訊</p>
+      </div>
+      <LoadingSkeleton />
       <span class="sr-only">載入中</span>
-      <svg
-        class="h-12 w-12 animate-spin text-indigo-500"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <circle
-          class="opacity-25"
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          stroke-width="4"
-        />
-        <path
-          class="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-        />
-      </svg>
-      <p class="text-lg font-medium text-slate-600">資料載入中，請稍候…</p>
-    </div>
+    </section>
   {:else if errorMessage}
     <p class="my-4 text-center text-xl font-semibold text-rose-500">{errorMessage}</p>
   {:else if pageItems.length > 0}

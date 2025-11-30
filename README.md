@@ -26,7 +26,8 @@ npm run dev
 
 ## 部署
 
-根目錄提供 `vercel.json`，已設定快取標頭，直接推送即可於 Vercel 部署。
+- 以 [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/) 部署，`npm run build` 即可，由 `@sveltejs/adapter-auto` 自動切換為 Cloudflare 介面。
+- 靜態快取標頭放在專案根目錄的 `_headers`，部署時會隨產物一併上傳到 Cloudflare Pages。
 
 ## 參考
 
