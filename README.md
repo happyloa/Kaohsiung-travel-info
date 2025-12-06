@@ -11,6 +11,8 @@
 
 ## 開發環境
 
+- Node.js 20.19 以上（建議使用 `nvm use 22` 對齊 SvelteKit 官方需求）
+
 ```bash
 npm install
 npm run dev
@@ -23,6 +25,10 @@ npm run dev
 - `src/lib/components`：元件 (選單、熱門按鈕、景點卡片)
 - `src/routes`：頁面路由
 - `static`：靜態資源，如 `favicon.webp`
+
+## 功能亮點
+
+- 右下角的「深／淺色模式」浮動按鈕，會根據系統偏好初始化並記錄使用者選擇，卡片、分頁與載入骨架都會隨主題同步換色。
 
 ## 部署
 

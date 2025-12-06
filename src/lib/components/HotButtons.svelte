@@ -11,7 +11,7 @@
 >
   {#each hotAreas as area}
     <button
-      class="w-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-4 py-2 text-sm font-medium text-white shadow transition hover:from-indigo-600 hover:to-violet-600 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:ring-offset-2 focus:ring-offset-white"
+      class="w-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-4 py-2 text-sm font-medium text-white shadow transition hover:from-indigo-600 hover:to-violet-600 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:ring-offset-2 focus:ring-offset-white dark:from-indigo-400 dark:to-violet-500 dark:hover:from-indigo-500 dark:hover:to-violet-600 dark:focus:ring-indigo-300 dark:focus:ring-offset-slate-900"
       on:click={() => onSelect?.(area)}
     >
       {area}

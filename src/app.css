@@ -1,6 +1,26 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 
+@layer base {
+  :root {
+    color-scheme: light;
+    --card-surface: #ffffff;
+    --card-muted: #475569;
+    --card-border: #e2e8f0;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+    --card-surface: #0f172a;
+    --card-muted: #cbd5e1;
+    --card-border: #1f2937;
+  }
+
+  body {
+    font-family: "Noto Sans TC", sans-serif;
+  }
+}
+
 /* 客製化的工具類別，搭配 Tailwind 使用 */
 @layer utilities {
   .text-shadow {

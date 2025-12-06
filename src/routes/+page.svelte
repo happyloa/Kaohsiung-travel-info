@@ -108,24 +108,24 @@
 </header>
 <!-- 主要內容 -->
 <main class="container mx-auto pb-12">
-  <div class="-mt-10 mx-2 rounded-3xl border border-indigo-100 bg-white/90 py-5 px-6 text-center shadow-lg backdrop-blur">
-    <h2 class="mb-2 text-2xl font-semibold text-indigo-600">💯 熱門景點 💯</h2>
+  <div class="-mt-10 mx-2 rounded-3xl border border-indigo-100 bg-white/90 py-5 px-6 text-center shadow-lg backdrop-blur dark:border-slate-700 dark:bg-slate-900/70">
+    <h2 class="mb-2 text-2xl font-semibold text-indigo-600 dark:text-indigo-300">💯 熱門景點 💯</h2>
     <HotButtons {hotAreas} onSelect={handleSelect} />
   </div>
-  <h3 class="my-6 text-center text-2xl font-bold text-slate-700">
+  <h3 class="my-6 text-center text-2xl font-bold text-slate-700 dark:text-slate-100">
     {selected || "全部景點"}
   </h3>
   {#if isLoading}
     <section class="my-12 space-y-5" role="status" aria-live="polite">
-      <div class="text-center text-indigo-600">
+      <div class="text-center text-indigo-600 dark:text-indigo-200">
         <p class="text-lg font-semibold">資料載入中，請稍候…</p>
-        <p class="text-sm text-slate-500">正在取得高雄各區景點資訊</p>
+        <p class="text-sm text-slate-500 dark:text-slate-300">正在取得高雄各區景點資訊</p>
       </div>
       <LoadingSkeleton />
       <span class="sr-only">載入中</span>
     </section>
   {:else if errorMessage}
-    <p class="my-4 text-center text-xl font-semibold text-rose-500">{errorMessage}</p>
+    <p class="my-4 text-center text-xl font-semibold text-rose-500 dark:text-rose-300">{errorMessage}</p>
   {:else if pageItems.length > 0}
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {#each pageItems as item (item.Name)}
@@ -134,11 +134,11 @@
     </ul>
     {#if totalPages > 1}
       <nav class="mt-8 flex justify-center" aria-label="景點分頁">
-        <ul class="inline-flex items-stretch overflow-hidden rounded-full border border-indigo-200 bg-white shadow">
+        <ul class="inline-flex items-stretch overflow-hidden rounded-full border border-indigo-200 bg-white shadow dark:border-slate-700 dark:bg-slate-900">
           <li>
             <button
               class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-indigo-600 transition hover:bg-indigo-50
-                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
+                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed dark:text-indigo-200 dark:hover:bg-slate-800"
               on:click={() => goToPage(currentPage - 1)}
               disabled={currentPage === 1}
               type="button"
@@ -153,10 +153,10 @@
             <li>
               <button
                 class={`px-4 py-2 text-sm font-semibold transition cursor-pointer focus-visible:outline focus-visible:outline-2
-                  focus-visible:outline-indigo-500 ${
+                  focus-visible:outline-indigo-500 dark:focus-visible:outline-indigo-300 ${
                   page === currentPage
-                    ? "bg-indigo-600 text-white shadow-inner"
-                    : "text-indigo-600 hover:bg-indigo-50"
+                    ? "bg-indigo-600 text-white shadow-inner dark:bg-indigo-500"
+                    : "text-indigo-600 hover:bg-indigo-50 dark:text-indigo-200 dark:hover:bg-slate-800"
                 }`}
                 type="button"
                 aria-current={page === currentPage ? "page" : undefined}
@@ -169,7 +169,7 @@
           <li>
             <button
               class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-indigo-600 transition hover:bg-indigo-50
-                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
+                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed dark:text-indigo-200 dark:hover:bg-slate-800"
               on:click={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
               type="button"
@@ -183,6 +183,6 @@
       </nav>
     {/if}
   {:else}
-    <p class="my-4 text-center text-2xl text-slate-500">目前沒有任何景點</p>
+    <p class="my-4 text-center text-2xl text-slate-500 dark:text-slate-300">目前沒有任何景點</p>
   {/if}
 </main>

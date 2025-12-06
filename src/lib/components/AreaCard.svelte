@@ -4,8 +4,8 @@
 </script>
 
 <!-- 單一景點卡片 -->
-<li class="rounded-xl bg-gradient-to-br from-indigo-50/70 via-white to-violet-50/60 p-0.5">
-  <article class="flex h-full flex-col rounded-[1rem] border border-indigo-100/80 bg-white shadow-md transition duration-200 hover:-translate-y-1 hover:shadow-xl">
+<li class="rounded-xl bg-gradient-to-br from-indigo-50/70 via-white to-violet-50/60 p-0.5 dark:from-slate-800/60 dark:via-slate-900/70 dark:to-slate-800/60">
+  <article class="flex h-full flex-col rounded-[1rem] border border-indigo-100/80 bg-white text-slate-800 shadow-md transition duration-200 hover:-translate-y-1 hover:shadow-xl dark:border-[var(--card-border)] dark:bg-[var(--card-surface)] dark:text-[var(--card-muted)]">
     <!-- 圖片與區域標籤 -->
     <header
       class="relative flex h-40 items-end justify-between overflow-hidden rounded-t-[1rem] bg-cover bg-center p-3"
@@ -29,7 +29,7 @@
       </div>
     </header>
     <!-- 營業資訊 -->
-    <footer class="space-y-2 border-t border-indigo-50 bg-white/90 p-4 text-sm text-slate-700">
+    <footer class="space-y-2 border-t border-indigo-50 bg-white/90 p-4 text-sm text-slate-700 dark:border-[var(--card-border)] dark:bg-[var(--card-surface)] dark:text-[var(--card-muted)]">
       <p class="flex items-start gap-2">
         <i class="fas fa-clock pt-0.5 text-indigo-500"></i>
         <span>{info.Opentime}</span>
