@@ -9,7 +9,7 @@
 </script>
 
 <button
-  class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300 dark:bg-indigo-500 dark:hover:bg-indigo-400"
+  class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300 dark:bg-indigo-500 dark:hover:bg-indigo-400 cursor-pointer"
   type="button"
   aria-pressed={theme === "dark"}
   aria-label={label}
