@@ -1,5 +1,28 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+@import "tailwindcss";
+
+/* 啟用 Tailwind CSS 4 的 dark mode class selector */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 深淺色模式變數 */
+:root {
+  --bg-primary: #f3f4f6;
+  --bg-secondary: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+}
+
+.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+}
+
+/* 深色模式過渡動畫 */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 /* 客製化的工具類別，搭配 Tailwind 使用 */
 @layer utilities {

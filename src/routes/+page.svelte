@@ -77,7 +77,10 @@
   // 根據目前頁碼計算應顯示的資料與總頁數
   function updatePagination() {
     totalPages = Math.ceil(filtered.length / pageSize);
-    const safePage = Math.min(Math.max(currentPage, 1), Math.max(totalPages, 1));
+    const safePage = Math.min(
+      Math.max(currentPage, 1),
+      Math.max(totalPages, 1)
+    );
     if (currentPage !== safePage) {
       currentPage = safePage;
     }
@@ -99,33 +102,51 @@
 <header
   class="relative overflow-hidden bg-[url('/bg.webp')] bg-cover bg-center p-8 sm:p-12 text-center text-white"
 >
-  <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/80 via-indigo-900/60 to-slate-900/70"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-indigo-950/80 via-indigo-900/60 to-slate-900/70"
+  ></div>
   <div class="relative mx-auto flex max-w-3xl flex-col items-center gap-3">
-    <h1 class="text-shadow text-3xl sm:text-4xl font-bold tracking-wide">高雄市旅遊資訊網</h1>
-    <p class="text-shadow text-2xl font-medium text-indigo-100">Kaohsiung City Travel Info</p>
+    <h1 class="text-shadow text-3xl sm:text-4xl font-bold tracking-wide">
+      高雄市旅遊資訊網
+    </h1>
+    <p class="text-shadow text-2xl font-medium text-indigo-100">
+      Kaohsiung City Travel Info
+    </p>
     <AreaSelect {areas} {selected} onChange={handleSelect} />
   </div>
 </header>
 <!-- 主要內容 -->
 <main class="container mx-auto pb-12">
-  <div class="-mt-10 mx-2 rounded-3xl border border-indigo-100 bg-white/90 py-5 px-6 text-center shadow-lg backdrop-blur">
-    <h2 class="mb-2 text-2xl font-semibold text-indigo-600">💯 熱門景點 💯</h2>
+  <div
+    class="-mt-10 mx-2 rounded-3xl border border-indigo-100 bg-white/90 py-5 px-6 text-center shadow-lg backdrop-blur transition-colors dark:border-slate-700 dark:bg-slate-800/90"
+  >
+    <h2
+      class="mb-2 text-2xl font-semibold text-indigo-600 dark:text-indigo-400"
+    >
+      💯 熱門景點 💯
+    </h2>
     <HotButtons {hotAreas} onSelect={handleSelect} />
   </div>
-  <h3 class="my-6 text-center text-2xl font-bold text-slate-700">
+  <h3
+    class="my-6 text-center text-2xl font-bold text-slate-700 transition-colors dark:text-slate-200"
+  >
     {selected || "全部景點"}
   </h3>
   {#if isLoading}
     <section class="my-12 space-y-5" role="status" aria-live="polite">
-      <div class="text-center text-indigo-600">
+      <div class="text-center text-indigo-600 dark:text-indigo-400">
         <p class="text-lg font-semibold">資料載入中，請稍候…</p>
-        <p class="text-sm text-slate-500">正在取得高雄各區景點資訊</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">
+          正在取得高雄各區景點資訊
+        </p>
       </div>
       <LoadingSkeleton />
       <span class="sr-only">載入中</span>
     </section>
   {:else if errorMessage}
-    <p class="my-4 text-center text-xl font-semibold text-rose-500">{errorMessage}</p>
+    <p class="my-4 text-center text-xl font-semibold text-rose-500">
+      {errorMessage}
+    </p>
   {:else if pageItems.length > 0}
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {#each pageItems as item (item.Name)}
@@ -134,11 +155,14 @@
     </ul>
     {#if totalPages > 1}
       <nav class="mt-8 flex justify-center" aria-label="景點分頁">
-        <ul class="inline-flex items-stretch overflow-hidden rounded-full border border-indigo-200 bg-white shadow">
+        <ul
+          class="inline-flex items-stretch overflow-hidden rounded-full border border-indigo-200 bg-white shadow transition-colors dark:border-slate-600 dark:bg-slate-800"
+        >
           <li>
             <button
               class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-indigo-600 transition hover:bg-indigo-50
-                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
+                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed
+                dark:text-indigo-400 dark:hover:bg-slate-700 dark:disabled:text-slate-500"
               on:click={() => goToPage(currentPage - 1)}
               disabled={currentPage === 1}
               type="button"
@@ -154,10 +178,10 @@
               <button
                 class={`px-4 py-2 text-sm font-semibold transition cursor-pointer focus-visible:outline focus-visible:outline-2
                   focus-visible:outline-indigo-500 ${
-                  page === currentPage
-                    ? "bg-indigo-600 text-white shadow-inner"
-                    : "text-indigo-600 hover:bg-indigo-50"
-                }`}
+                    page === currentPage
+                      ? "bg-indigo-600 text-white shadow-inner"
+                      : "text-indigo-600 hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-slate-700"
+                  }`}
                 type="button"
                 aria-current={page === currentPage ? "page" : undefined}
                 on:click={() => goToPage(page)}
@@ -169,7 +193,8 @@
           <li>
             <button
               class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-indigo-600 transition hover:bg-indigo-50
-                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed"
+                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed
+                dark:text-indigo-400 dark:hover:bg-slate-700 dark:disabled:text-slate-500"
               on:click={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
               type="button"
@@ -183,6 +208,8 @@
       </nav>
     {/if}
   {:else}
-    <p class="my-4 text-center text-2xl text-slate-500">目前沒有任何景點</p>
+    <p class="my-4 text-center text-2xl text-slate-500 dark:text-slate-400">
+      目前沒有任何景點
+    </p>
   {/if}
 </main>

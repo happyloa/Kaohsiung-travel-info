@@ -4,14 +4,20 @@
 </script>
 
 <!-- 單一景點卡片 -->
-<li class="rounded-xl bg-gradient-to-br from-indigo-50/70 via-white to-violet-50/60 p-0.5">
-  <article class="flex h-full flex-col rounded-[1rem] border border-indigo-100/80 bg-white shadow-md transition duration-200 hover:-translate-y-1 hover:shadow-xl">
+<li
+  class="rounded-xl bg-gradient-to-br from-indigo-50/70 via-white to-violet-50/60 p-0.5 transition-colors dark:from-slate-800/70 dark:via-slate-800 dark:to-slate-900/60"
+>
+  <article
+    class="flex h-full flex-col rounded-[1rem] border border-indigo-100/80 bg-white shadow-md transition duration-200 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700/80 dark:bg-slate-800"
+  >
     <!-- 圖片與區域標籤 -->
     <header
       class="relative flex h-40 items-end justify-between overflow-hidden rounded-t-[1rem] bg-cover bg-center p-3"
       style="background-image:url({info.Picture1})"
     >
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"
+      ></div>
       {#if info.Ticketinfo === "免費參觀"}
         <div
           class="absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full bg-emerald-500/90 px-3 py-1 text-xs font-medium text-white shadow"
@@ -20,8 +26,14 @@
           免費
         </div>
       {/if}
-      <div class="relative z-10 flex w-full items-end justify-between gap-2 text-white">
-        <p class="text-lg font-semibold leading-tight text-shadow drop-shadow-lg">{info.Name}</p>
+      <div
+        class="relative z-10 flex w-full items-end justify-between gap-2 text-white"
+      >
+        <p
+          class="text-lg font-semibold leading-tight text-shadow drop-shadow-lg"
+        >
+          {info.Name}
+        </p>
         <span
           class="rounded-full bg-indigo-500/90 px-3 py-1 text-xs font-semibold text-white"
           >{info.Zone}</span
@@ -29,17 +41,20 @@
       </div>
     </header>
     <!-- 營業資訊 -->
-    <footer class="space-y-2 border-t border-indigo-50 bg-white/90 p-4 text-sm text-slate-700">
+    <footer
+      class="space-y-2 border-t border-indigo-50 bg-white/90 p-4 text-sm text-slate-700 transition-colors dark:border-slate-700 dark:bg-slate-800/90 dark:text-slate-300"
+    >
       <p class="flex items-start gap-2">
-        <i class="fas fa-clock pt-0.5 text-indigo-500"></i>
+        <i class="fas fa-clock pt-0.5 text-indigo-500 dark:text-indigo-400"></i>
         <span>{info.Opentime}</span>
       </p>
       <p class="flex items-start gap-2">
-        <i class="fas fa-home pt-0.5 text-indigo-500"></i>
+        <i class="fas fa-home pt-0.5 text-indigo-500 dark:text-indigo-400"></i>
         <span>{info.Add}</span>
       </p>
       <p class="flex items-start gap-2">
-        <i class="fas fa-phone-alt pt-0.5 text-indigo-500"></i>
+        <i class="fas fa-phone-alt pt-0.5 text-indigo-500 dark:text-indigo-400"
+        ></i>
         <span>{info.Tel}</span>
       </p>
     </footer>
