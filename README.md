@@ -2,12 +2,21 @@
 
 # 高雄市旅遊資訊網 (SvelteKit)
 
-本專案將原始的 HTML/CSS/JS 版本重構為 [SvelteKit](https://kit.svelte.dev/) 並整合 [Tailwind CSS](https://tailwindcss.com/)。
+本專案將原始的 HTML/CSS/JS 版本重構為 [SvelteKit](https://svelte.dev/) 並整合 [Tailwind CSS](https://tailwindcss.com/)。
+
+## 功能特色
+
+- 🌙 **深淺色模式**：支援一鍵切換淺色/深色主題，偏好設定會自動儲存
+- 🔍 **區域篩選**：可依行政區篩選高雄各區景點
+- ⚡ **熱門景點快速按鈕**：快速查看苓雅、三民、新興、鼓山等熱門區域
+- 📄 **分頁瀏覽**：景點以分頁方式呈現，每頁顯示 12 筆
 
 ## 使用技術
 
-- SvelteKit (TypeScript)
-- Tailwind CSS 4
+- [SvelteKit](https://svelte.dev/) 2.x (Svelte 5)
+- [Tailwind CSS](https://tailwindcss.com/) 4.x
+- [Vite](https://vite.dev/) 7.x
+- TypeScript
 
 ## 開發環境
 
@@ -20,9 +29,23 @@ npm run dev
 
 ## 專案結構
 
-- `src/lib/components`：元件 (選單、熱門按鈕、景點卡片)
-- `src/routes`：頁面路由
-- `static`：靜態資源，如 `favicon.webp`
+```
+src/
+├── app.css                 # 全域樣式與 Tailwind CSS 設定
+├── app.html                # HTML 模板
+├── hooks.server.ts         # 安全標頭設定
+├── lib/
+│   └── components/         # 元件
+│       ├── AreaCard.svelte       # 景點卡片
+│       ├── AreaSelect.svelte     # 區域下拉選單
+│       ├── HotButtons.svelte     # 熱門區域按鈕
+│       ├── LoadingSkeleton.svelte # 載入骨架
+│       └── ThemeToggle.svelte    # 深淺色模式切換
+└── routes/
+    ├── +layout.svelte      # 全域佈局
+    └── +page.svelte        # 主頁面
+static/                      # 靜態資源
+```
 
 ## 部署
 
@@ -31,5 +54,6 @@ npm run dev
 
 ## 參考
 
-- [SvelteKit Docs](https://kit.svelte.dev/docs)
+- [SvelteKit Docs](https://svelte.dev/docs/kit)
+- [Svelte 5 Docs](https://svelte.dev/docs/svelte)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
