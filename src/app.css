@@ -26,6 +26,16 @@
   }
 }
 
+/* 全域鍵盤焦點樣式 - 無障礙改善 */
+*:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.dark *:focus-visible {
+  outline-color: #818cf8;
+}
+
 /* 可重用的元件樣式 */
 @layer components {
   /* 卡片外層漸層邊框 */

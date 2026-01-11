@@ -1,25 +1,16 @@
 <script lang="ts">
   // Svelte 生命週期
   import { onMount } from "svelte";
+  // 型別定義
+  import type { SpotInfo } from "$lib/types";
   // 自訂元件
   import AreaSelect from "$lib/components/AreaSelect.svelte";
   import HotButtons from "$lib/components/HotButtons.svelte";
   import AreaCard from "$lib/components/AreaCard.svelte";
   import LoadingSkeleton from "$lib/components/LoadingSkeleton.svelte";
 
-  // 景點資訊型別
-  interface Info {
-    Name: string;
-    Zone: string;
-    Picture1: string;
-    Opentime: string;
-    Add: string;
-    Tel: string;
-    Ticketinfo: string;
-  }
-
   // 從 API 取得的全部資料
-  let data: Info[] = [];
+  let data: SpotInfo[] = [];
   // 載入狀態與錯誤訊息
   let isLoading = true;
   let errorMessage: string | null = null;
@@ -30,13 +21,13 @@
   // 熱門區域列表，方便快速切換
   const hotAreas = ["苓雅區", "三民區", "新興區", "鼓山區"];
   // 根據選擇篩出的資料
-  let filtered: Info[] = [];
+  let filtered: SpotInfo[] = [];
   // 分頁設定：一頁顯示 12 張卡片
   const pageSize = 12;
   // 目前顯示的頁碼
   let currentPage = 1;
   // 目前頁面要顯示的卡片資料
-  let pageItems: Info[] = [];
+  let pageItems: SpotInfo[] = [];
   // 全部頁數
   let totalPages = 0;
 
@@ -51,7 +42,7 @@
       }
       const json = await res.json();
       data = json.result.records;
-      areas = Array.from(new Set(data.map((d: Info) => d.Zone)));
+      areas = Array.from(new Set(data.map((d: SpotInfo) => d.Zone)));
       updateFiltered();
     } catch (error) {
       errorMessage =
