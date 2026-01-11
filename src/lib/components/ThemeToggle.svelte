@@ -40,7 +40,7 @@
 <button
   type="button"
   on:click={toggleTheme}
-  class="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full
+  class="fixed bottom-5 right-5 z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full
     bg-white/90 text-indigo-600 shadow-lg backdrop-blur-sm transition-all duration-300
     hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-400
     dark:bg-slate-800/90 dark:text-amber-400 dark:hover:bg-slate-700"

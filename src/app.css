@@ -4,24 +4,15 @@
 /* 啟用 Tailwind CSS 4 的 dark mode class selector */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* 深淺色模式變數 */
+/* 深淺色模式背景變數（app.html 使用） */
 :root {
   --bg-primary: #f3f4f6;
-  --bg-secondary: #ffffff;
   --text-primary: #111827;
-  --text-secondary: #374151;
 }
 
 .dark {
   --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
   --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
-}
-
-/* 深色模式過渡動畫 */
-html {
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* 客製化的工具類別，搭配 Tailwind 使用 */
@@ -32,5 +23,33 @@ html {
 
   .font-noto {
     font-family: "Noto Sans TC", sans-serif;
+  }
+}
+
+/* 可重用的元件樣式 */
+@layer components {
+  /* 卡片外層漸層邊框 */
+  .card-gradient {
+    @apply rounded-xl bg-gradient-to-br from-indigo-50/70 via-white to-violet-50/60 p-0.5 transition-colors dark:from-slate-800/70 dark:via-slate-800 dark:to-slate-900/60;
+  }
+
+  /* 卡片內層容器 */
+  .card-inner {
+    @apply flex h-full flex-col rounded-[1rem] border border-indigo-100/80 bg-white shadow-md dark:border-slate-700/80 dark:bg-slate-800;
+  }
+
+  /* 分頁按鈕 */
+  .page-btn {
+    @apply flex items-center gap-1 px-4 py-2 text-sm font-medium text-indigo-600 transition cursor-pointer hover:bg-indigo-50 disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed dark:text-indigo-400 dark:hover:bg-slate-700 dark:disabled:text-slate-500;
+  }
+
+  /* 卡片資訊列 */
+  .info-row {
+    @apply flex items-start gap-2;
+  }
+
+  /* 卡片資訊圖示 */
+  .info-icon {
+    @apply pt-0.5 text-indigo-500 dark:text-indigo-400;
   }
 }

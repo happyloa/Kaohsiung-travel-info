@@ -4,11 +4,9 @@
 </script>
 
 <!-- 單一景點卡片 -->
-<li
-  class="rounded-xl bg-gradient-to-br from-indigo-50/70 via-white to-violet-50/60 p-0.5 transition-colors dark:from-slate-800/70 dark:via-slate-800 dark:to-slate-900/60"
->
+<li class="card-gradient">
   <article
-    class="flex h-full flex-col rounded-[1rem] border border-indigo-100/80 bg-white shadow-md transition duration-200 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700/80 dark:bg-slate-800"
+    class="card-inner transition duration-200 hover:-translate-y-1 hover:shadow-xl"
   >
     <!-- 圖片與區域標籤 -->
     <header
@@ -44,17 +42,16 @@
     <footer
       class="space-y-2 border-t border-indigo-50 bg-white/90 p-4 text-sm text-slate-700 transition-colors dark:border-slate-700 dark:bg-slate-800/90 dark:text-slate-300"
     >
-      <p class="flex items-start gap-2">
-        <i class="fas fa-clock pt-0.5 text-indigo-500 dark:text-indigo-400"></i>
+      <p class="info-row">
+        <i class="fas fa-clock info-icon"></i>
         <span>{info.Opentime}</span>
       </p>
-      <p class="flex items-start gap-2">
-        <i class="fas fa-home pt-0.5 text-indigo-500 dark:text-indigo-400"></i>
+      <p class="info-row">
+        <i class="fas fa-home info-icon"></i>
         <span>{info.Add}</span>
       </p>
-      <p class="flex items-start gap-2">
-        <i class="fas fa-phone-alt pt-0.5 text-indigo-500 dark:text-indigo-400"
-        ></i>
+      <p class="info-row">
+        <i class="fas fa-phone-alt info-icon"></i>
         <span>{info.Tel}</span>
       </p>
     </footer>

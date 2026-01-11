@@ -9,12 +9,8 @@
   aria-hidden="true"
 >
   {#each placeholders as _, index (index)}
-    <li
-      class="rounded-xl bg-gradient-to-br from-indigo-50/70 via-white to-violet-50/60 p-0.5 transition-colors dark:from-slate-800/70 dark:via-slate-800 dark:to-slate-900/60"
-    >
-      <div
-        class="flex h-full flex-col rounded-[1rem] border border-indigo-100/80 bg-white shadow-md dark:border-slate-700/80 dark:bg-slate-800"
-      >
+    <li class="card-gradient">
+      <div class="card-inner">
         <div
           class="relative flex h-40 items-end overflow-hidden rounded-t-[1rem] bg-slate-200/80 dark:bg-slate-700/80"
         >

@@ -160,9 +160,7 @@
         >
           <li>
             <button
-              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-indigo-600 transition hover:bg-indigo-50
-                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed
-                dark:text-indigo-400 dark:hover:bg-slate-700 dark:disabled:text-slate-500"
+              class="page-btn"
               on:click={() => goToPage(currentPage - 1)}
               disabled={currentPage === 1}
               type="button"
@@ -192,9 +190,7 @@
           {/each}
           <li>
             <button
-              class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-indigo-600 transition hover:bg-indigo-50
-                cursor-pointer disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed
-                dark:text-indigo-400 dark:hover:bg-slate-700 dark:disabled:text-slate-500"
+              class="page-btn"
               on:click={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
               type="button"
