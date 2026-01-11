@@ -116,9 +116,9 @@
   </div>
 </header>
 <!-- 主要內容 -->
-<main class="container mx-auto pb-12">
+<main class="container mx-auto px-5 pb-12">
   <div
-    class="-mt-10 mx-2 rounded-3xl border border-indigo-100 bg-white/90 py-5 px-6 text-center shadow-lg backdrop-blur transition-colors dark:border-slate-700 dark:bg-slate-800/90"
+    class="-mt-10 rounded-3xl border border-indigo-100 bg-white/90 py-5 px-6 text-center shadow-lg backdrop-blur transition-colors dark:border-slate-700 dark:bg-slate-800/90"
   >
     <h2
       class="mb-2 text-2xl font-semibold text-indigo-600 dark:text-indigo-400"
