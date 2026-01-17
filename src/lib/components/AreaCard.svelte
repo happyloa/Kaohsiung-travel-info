@@ -20,7 +20,7 @@
         class="h-full w-full object-cover"
       />
       <div
-        class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"
+        class="absolute inset-0 bg-gradient-to-t from-indigo-950/85 via-indigo-950/15 to-transparent"
       ></div>
       {#if info.Ticketinfo === "免費參觀"}
         <div
@@ -40,14 +40,14 @@
           {info.Name}
         </h3>
         <span
-          class="rounded-full bg-indigo-500/90 px-3 py-1 text-xs font-semibold text-white"
+          class="rounded-full bg-indigo-600/95 px-3 py-1 text-xs font-semibold text-white shadow-sm"
           >{info.Zone}</span
         >
       </div>
     </header>
     <!-- 營業資訊 -->
     <footer
-      class="space-y-2 border-t border-indigo-50 bg-white/90 p-4 text-sm text-slate-700 transition-colors dark:border-slate-700 dark:bg-slate-800/90 dark:text-slate-300"
+      class="space-y-2 border-t border-indigo-100 bg-white/95 p-4 text-sm text-indigo-950 transition-colors dark:border-indigo-900/50 dark:bg-slate-900/95 dark:text-indigo-100"
     >
       <p class="info-row">
         <i class="fas fa-clock info-icon" aria-hidden="true"></i>

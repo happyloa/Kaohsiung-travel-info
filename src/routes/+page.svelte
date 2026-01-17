@@ -95,7 +95,7 @@
   data-aos="fade-down"
 >
   <div
-    class="absolute inset-0 bg-gradient-to-b from-indigo-950/80 via-indigo-900/60 to-slate-900/70"
+    class="absolute inset-0 bg-gradient-to-b from-indigo-950/85 via-violet-900/65 to-slate-900/75"
   ></div>
   <div class="relative mx-auto flex max-w-3xl flex-col items-center gap-3">
     <h1 class="text-shadow text-3xl sm:text-4xl font-bold tracking-wide">
@@ -110,18 +110,18 @@
 <!-- 主要內容 -->
 <main class="container mx-auto px-5 pb-12">
   <div
-    class="-mt-10 rounded-3xl border border-indigo-100 bg-white/90 py-5 px-6 text-center shadow-lg backdrop-blur transition-colors dark:border-slate-700 dark:bg-slate-800/90"
+    class="-mt-10 rounded-3xl border border-indigo-200 bg-white/95 py-5 px-6 text-center shadow-xl backdrop-blur transition-colors dark:border-indigo-900/70 dark:bg-slate-900/95"
     data-aos="fade-up"
   >
     <h2
-      class="mb-2 text-2xl font-semibold text-indigo-600 dark:text-indigo-400"
+      class="mb-2 text-2xl font-semibold text-indigo-700 dark:text-indigo-300"
     >
       💯 熱門景點 💯
     </h2>
     <HotButtons {hotAreas} onSelect={handleSelect} />
   </div>
   <h3
-    class="my-6 text-center text-2xl font-bold text-slate-700 transition-colors dark:text-slate-200"
+    class="my-6 text-center text-2xl font-bold text-indigo-900 transition-colors dark:text-indigo-100"
     data-aos="fade-up"
     data-aos-delay="100"
   >
@@ -159,7 +159,7 @@
         data-aos="fade-up"
       >
         <ul
-          class="inline-flex items-stretch overflow-hidden rounded-full border border-indigo-200 bg-white shadow transition-colors dark:border-slate-600 dark:bg-slate-800"
+          class="inline-flex items-stretch overflow-hidden rounded-full border border-indigo-300 bg-white shadow-md transition-colors dark:border-indigo-800 dark:bg-slate-900"
         >
           <li>
             <button

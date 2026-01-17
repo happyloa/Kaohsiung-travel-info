@@ -6,13 +6,13 @@
 
 /* 深淺色模式背景變數（app.html 使用） */
 :root {
-  --bg-primary: #f3f4f6;
-  --text-primary: #111827;
+  --bg-primary: #eef2ff;
+  --text-primary: #1e1b4b;
 }
 
 .dark {
-  --bg-primary: #0f172a;
-  --text-primary: #f1f5f9;
+  --bg-primary: #020617;
+  --text-primary: #e0e7ff;
 }
 
 /* 客製化的工具類別，搭配 Tailwind 使用 */
@@ -28,29 +28,29 @@
 
 /* 全域鍵盤焦點樣式 - 無障礙改善 */
 *:focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #4f46e5;
   outline-offset: 2px;
 }
 
 .dark *:focus-visible {
-  outline-color: #818cf8;
+  outline-color: #a5b4fc;
 }
 
 /* 可重用的元件樣式 */
 @layer components {
   /* 卡片外層漸層邊框 */
   .card-gradient {
-    @apply rounded-xl bg-gradient-to-br from-indigo-50/70 via-white to-violet-50/60 p-0.5 transition-colors dark:from-slate-800/70 dark:via-slate-800 dark:to-slate-900/60;
+    @apply rounded-xl bg-gradient-to-br from-indigo-100/80 via-white to-violet-100/70 p-0.5 transition-colors dark:from-indigo-950/60 dark:via-slate-900 dark:to-violet-950/50;
   }
 
   /* 卡片內層容器 */
   .card-inner {
-    @apply flex h-full flex-col rounded-[1rem] border border-indigo-100/80 bg-white shadow-md dark:border-slate-700/80 dark:bg-slate-800;
+    @apply flex h-full flex-col rounded-[1rem] border border-indigo-200/90 bg-white shadow-md dark:border-indigo-900/60 dark:bg-slate-900;
   }
 
   /* 分頁按鈕 */
   .page-btn {
-    @apply flex items-center gap-1 px-4 py-2 text-sm font-medium text-indigo-600 transition cursor-pointer hover:bg-indigo-50 disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed dark:text-indigo-400 dark:hover:bg-slate-700 dark:disabled:text-slate-500;
+    @apply flex items-center gap-1 px-4 py-2 text-sm font-medium text-indigo-700 transition cursor-pointer hover:bg-indigo-100 disabled:text-gray-400 disabled:hover:bg-transparent disabled:cursor-not-allowed dark:text-indigo-300 dark:hover:bg-indigo-950 dark:disabled:text-slate-600;
   }
 
   /* 卡片資訊列 */
@@ -60,6 +60,6 @@
 
   /* 卡片資訊圖示 */
   .info-icon {
-    @apply pt-0.5 text-indigo-500 dark:text-indigo-400;
+    @apply pt-0.5 text-indigo-600 dark:text-indigo-400;
   }
 }
