@@ -7,6 +7,7 @@
 ## 功能特色
 
 - 🌙 **深淺色模式**：支援一鍵切換淺色/深色主題，偏好設定會自動儲存
+- 🎬 **滾動動畫**：使用 AOS (Animate On Scroll) 為頁面元素加入流暢的滾動動畫效果
 - 🔍 **區域篩選**：可依行政區篩選高雄各區景點
 - ⚡ **熱門景點快速按鈕**：快速查看苓雅、三民、新興、鼓山等熱門區域
 - 📄 **分頁瀏覽**：景點以分頁方式呈現，每頁顯示 12 筆
@@ -15,6 +16,7 @@
 
 - [SvelteKit](https://svelte.dev/) 2.x (Svelte 5)
 - [Tailwind CSS](https://tailwindcss.com/) 4.x
+- [AOS](https://michalsnik.github.io/aos/) 2.x - 滾動動畫
 - [Vite](https://vite.dev/) 7.x
 - TypeScript
 
@@ -35,6 +37,7 @@ src/
 ├── app.html                # HTML 模板
 ├── hooks.server.ts         # 安全標頭設定
 ├── lib/
+│   ├── aos.ts              # AOS 動畫初始化模組
 │   └── components/         # 元件
 │       ├── AreaCard.svelte       # 景點卡片
 │       ├── AreaSelect.svelte     # 區域下拉選單
