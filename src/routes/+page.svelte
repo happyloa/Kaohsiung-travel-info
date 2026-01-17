@@ -212,3 +212,23 @@
     </p>
   {/if}
 </main>
+
+<!-- 頁尾 -->
+<footer
+  class="border-t border-indigo-200 bg-gradient-to-b from-white to-indigo-50/50 py-8 text-center transition-colors dark:border-indigo-900/50 dark:from-slate-900 dark:to-indigo-950/30"
+  data-aos="fade-up"
+>
+  <a
+    href="https://github.com/happyloa/Kaohsiung-travel-info"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-3 rounded-full bg-indigo-100/80 px-6 py-3 text-indigo-700 shadow-sm transition-all hover:bg-indigo-200 hover:shadow-md dark:bg-indigo-950/60 dark:text-indigo-300 dark:hover:bg-indigo-900/70"
+    aria-label="前往 GitHub 專案頁面"
+  >
+    <img src="/github.webp" alt="GitHub" class="h-6 w-6 dark:invert" />
+    <span class="font-medium">View on GitHub</span>
+  </a>
+  <p class="mt-4 text-sm text-indigo-600/70 dark:text-indigo-400/60">
+    © 2026 高雄市旅遊資訊網. All rights reserved.
+  </p>
+</footer>
