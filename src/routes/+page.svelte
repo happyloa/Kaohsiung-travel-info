@@ -35,7 +35,7 @@
   onMount(async () => {
     try {
       const res = await fetch(
-        "https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json"
+        "https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json",
       );
       if (!res.ok) {
         throw new Error("無法取得旅遊資訊，請稍後再試。");
@@ -70,7 +70,7 @@
     totalPages = Math.ceil(filtered.length / pageSize);
     const safePage = Math.min(
       Math.max(currentPage, 1),
-      Math.max(totalPages, 1)
+      Math.max(totalPages, 1),
     );
     if (currentPage !== safePage) {
       currentPage = safePage;
@@ -92,6 +92,7 @@
 <!-- 頁面頂部 -->
 <header
   class="relative overflow-hidden bg-[url('/bg.webp')] bg-cover bg-center p-8 sm:p-12 text-center text-white"
+  data-aos="fade-down"
 >
   <div
     class="absolute inset-0 bg-gradient-to-b from-indigo-950/80 via-indigo-900/60 to-slate-900/70"
@@ -110,6 +111,7 @@
 <main class="container mx-auto px-5 pb-12">
   <div
     class="-mt-10 rounded-3xl border border-indigo-100 bg-white/90 py-5 px-6 text-center shadow-lg backdrop-blur transition-colors dark:border-slate-700 dark:bg-slate-800/90"
+    data-aos="fade-up"
   >
     <h2
       class="mb-2 text-2xl font-semibold text-indigo-600 dark:text-indigo-400"
@@ -120,6 +122,8 @@
   </div>
   <h3
     class="my-6 text-center text-2xl font-bold text-slate-700 transition-colors dark:text-slate-200"
+    data-aos="fade-up"
+    data-aos-delay="100"
   >
     {selected || "全部景點"}
   </h3>
@@ -139,13 +143,21 @@
       {errorMessage}
     </p>
   {:else if pageItems.length > 0}
-    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <ul
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+      data-aos="fade-up"
+      data-aos-delay="150"
+    >
       {#each pageItems as item (item.Name)}
         <AreaCard info={item} />
       {/each}
     </ul>
     {#if totalPages > 1}
-      <nav class="mt-8 flex justify-center" aria-label="景點分頁">
+      <nav
+        class="mt-8 flex justify-center"
+        aria-label="景點分頁"
+        data-aos="fade-up"
+      >
         <ul
           class="inline-flex items-stretch overflow-hidden rounded-full border border-indigo-200 bg-white shadow transition-colors dark:border-slate-600 dark:bg-slate-800"
         >

@@ -3,6 +3,13 @@
   import "../app.css";
   // 主題切換按鈕元件
   import ThemeToggle from "$lib/components/ThemeToggle.svelte";
+  // AOS 動畫
+  import { onMount } from "svelte";
+  import { initAOS } from "$lib/aos";
+
+  onMount(() => {
+    initAOS();
+  });
 </script>
 
 <svelte:head>

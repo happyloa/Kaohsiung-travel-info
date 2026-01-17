@@ -6,7 +6,7 @@
 </script>
 
 <!-- 單一景點卡片 -->
-<li class="card-gradient">
+<li class="card-gradient" data-aos="fade-up">
   <article
     class="card-inner transition duration-200 hover:-translate-y-1 hover:shadow-xl"
     aria-labelledby="spot-{info.Name.replace(/\s+/g, '-')}"
