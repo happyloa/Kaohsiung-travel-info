@@ -40,12 +40,12 @@
 @layer components {
   /* 卡片外層漸層邊框 */
   .card-gradient {
-    @apply rounded-xl bg-gradient-to-br from-indigo-100/80 via-white to-violet-100/70 p-0.5 transition-colors dark:from-indigo-950/60 dark:via-slate-900 dark:to-violet-950/50;
+    @apply rounded-2xl bg-gradient-to-br from-indigo-100/80 via-white to-violet-100/70 p-0.5 transition-colors dark:from-indigo-950/60 dark:via-slate-900 dark:to-violet-950/50;
   }
 
   /* 卡片內層容器 */
   .card-inner {
-    @apply flex h-full flex-col rounded-[1rem] border border-indigo-200/90 bg-white shadow-md dark:border-indigo-900/60 dark:bg-slate-900;
+    @apply flex h-full flex-col overflow-hidden rounded-xl border border-indigo-200/90 bg-white shadow-md dark:border-indigo-900/60 dark:bg-slate-900;
   }
 
   /* 分頁按鈕 */
