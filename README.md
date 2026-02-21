@@ -38,6 +38,7 @@ src/
 ├── hooks.server.ts         # 安全標頭設定
 ├── lib/
 │   ├── aos.ts              # AOS 動畫初始化模組
+│   ├── types.ts            # 全域型別定義
 │   └── components/         # 元件
 │       ├── AreaCard.svelte       # 景點卡片
 │       ├── AreaSelect.svelte     # 區域下拉選單
