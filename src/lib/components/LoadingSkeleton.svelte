@@ -29,7 +29,7 @@
           </div>
         </div>
         <div
-          class="space-y-3 border-t border-indigo-50 bg-white/90 p-4 dark:border-slate-700 dark:bg-slate-800/90"
+          class="space-y-3 border-t border-blue-50 bg-white/90 p-4 dark:border-slate-700 dark:bg-slate-800/90"
         >
           <div
             class="h-4 w-3/4 rounded-full bg-slate-200 dark:bg-slate-600"

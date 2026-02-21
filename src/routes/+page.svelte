@@ -95,13 +95,13 @@
   data-aos="fade-down"
 >
   <div
-    class="absolute inset-0 bg-gradient-to-b from-indigo-950/85 via-violet-900/65 to-slate-900/75"
+    class="absolute inset-0 bg-gradient-to-b from-blue-950/85 via-sky-900/65 to-slate-900/75"
   ></div>
   <div class="relative mx-auto flex max-w-3xl flex-col items-center gap-3">
     <h1 class="text-shadow text-3xl sm:text-4xl font-bold tracking-wide">
       高雄市旅遊資訊網
     </h1>
-    <p class="text-shadow text-2xl font-medium text-indigo-100">
+    <p class="text-shadow text-2xl font-medium text-blue-100">
       Kaohsiung City Travel Info
     </p>
     <AreaSelect {areas} {selected} onChange={handleSelect} />
@@ -110,18 +110,18 @@
 <!-- 主要內容 -->
 <main class="container mx-auto px-5 pb-12">
   <div
-    class="-mt-10 rounded-3xl border border-indigo-200 bg-white/95 py-5 px-6 text-center shadow-xl backdrop-blur transition-colors dark:border-indigo-900/70 dark:bg-slate-900/95"
+    class="-mt-10 rounded-3xl border border-blue-200 bg-white/95 py-5 px-6 text-center shadow-xl backdrop-blur transition-colors dark:border-blue-900/70 dark:bg-slate-900/95"
     data-aos="fade-up"
   >
     <h2
-      class="mb-2 text-2xl font-semibold text-indigo-700 dark:text-indigo-300"
+      class="mb-2 text-2xl font-semibold text-blue-700 dark:text-blue-300"
     >
       💯 熱門景點 💯
     </h2>
     <HotButtons {hotAreas} onSelect={handleSelect} />
   </div>
   <h3
-    class="my-6 text-center text-2xl font-bold text-indigo-900 transition-colors dark:text-indigo-100"
+    class="my-6 text-center text-2xl font-bold text-blue-900 transition-colors dark:text-blue-100"
     data-aos="fade-up"
     data-aos-delay="100"
   >
@@ -129,7 +129,7 @@
   </h3>
   {#if isLoading}
     <section class="my-12 space-y-5" role="status" aria-live="polite">
-      <div class="text-center text-indigo-600 dark:text-indigo-400">
+      <div class="text-center text-blue-600 dark:text-blue-400">
         <p class="text-lg font-semibold">資料載入中，請稍候…</p>
         <p class="text-sm text-slate-500 dark:text-slate-400">
           正在取得高雄各區景點資訊
@@ -159,7 +159,7 @@
         data-aos="fade-up"
       >
         <ul
-          class="inline-flex items-stretch overflow-hidden rounded-full border border-indigo-300 bg-white shadow-md transition-colors dark:border-indigo-800 dark:bg-slate-900"
+          class="inline-flex items-stretch overflow-hidden rounded-full border border-blue-300 bg-white shadow-md transition-colors dark:border-blue-800 dark:bg-slate-900"
         >
           <li>
             <button
@@ -178,10 +178,10 @@
             <li>
               <button
                 class={`px-4 py-2 text-sm font-semibold transition cursor-pointer focus-visible:outline focus-visible:outline-2
-                  focus-visible:outline-indigo-500 ${
+                  focus-visible:outline-blue-500 ${
                     page === currentPage
-                      ? "bg-indigo-600 text-white shadow-inner"
-                      : "text-indigo-600 hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-slate-700"
+                      ? "bg-blue-600 text-white shadow-inner"
+                      : "text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-slate-700"
                   }`}
                 type="button"
                 aria-current={page === currentPage ? "page" : undefined}
@@ -215,20 +215,20 @@
 
 <!-- 頁尾 -->
 <footer
-  class="border-t border-indigo-200 bg-gradient-to-b from-white to-indigo-50/50 py-8 text-center transition-colors dark:border-indigo-900/50 dark:from-slate-900 dark:to-indigo-950/30"
+  class="border-t border-blue-200 bg-gradient-to-b from-white to-blue-50/50 py-8 text-center transition-colors dark:border-blue-900/50 dark:from-slate-900 dark:to-blue-950/30"
   data-aos="fade-up"
 >
   <a
     href="https://github.com/happyloa/Kaohsiung-travel-info"
     target="_blank"
     rel="noopener noreferrer"
-    class="inline-flex items-center gap-3 rounded-full bg-indigo-100/80 px-6 py-3 text-indigo-700 shadow-sm transition-all hover:bg-indigo-200 hover:shadow-md dark:bg-indigo-950/60 dark:text-indigo-300 dark:hover:bg-indigo-900/70"
+    class="inline-flex items-center gap-3 rounded-full bg-blue-100/80 px-6 py-3 text-blue-700 shadow-sm transition-all hover:bg-blue-200 hover:shadow-md dark:bg-blue-950/60 dark:text-blue-300 dark:hover:bg-blue-900/70"
     aria-label="前往 GitHub 專案頁面"
   >
     <img src="/github.webp" alt="GitHub" class="h-6 w-6 dark:invert" />
     <span class="font-medium">View on GitHub</span>
   </a>
-  <p class="mt-4 text-sm text-indigo-600/70 dark:text-indigo-400/60">
+  <p class="mt-4 text-sm text-blue-600/70 dark:text-blue-400/60">
     © 2026 高雄市旅遊資訊網. All rights reserved.
   </p>
 </footer>

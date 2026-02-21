@@ -6,7 +6,7 @@
 
 <li data-aos="fade-up">
   <article
-    class="flex h-full flex-col overflow-hidden rounded-2xl border border-indigo-200/90 bg-white shadow-md transition duration-200 hover:-translate-y-1 hover:shadow-xl dark:border-indigo-900/60 dark:bg-slate-900"
+    class="flex h-full flex-col overflow-hidden rounded-2xl border border-blue-200/90 bg-white shadow-md transition duration-200 hover:-translate-y-1 hover:shadow-xl dark:border-blue-900/60 dark:bg-slate-900"
   >
     <!-- 圖片區域 -->
     <div class="relative h-40">
@@ -17,7 +17,7 @@
         class="h-full w-full object-cover"
       />
       <div
-        class="absolute inset-0 bg-gradient-to-t from-indigo-950/85 via-indigo-950/15 to-transparent"
+        class="absolute inset-0 bg-gradient-to-t from-blue-950/85 via-blue-950/15 to-transparent"
       ></div>
       {#if info.Ticketinfo === "免費參觀"}
         <span
@@ -33,14 +33,14 @@
           {info.Name}
         </h3>
         <span
-          class="rounded-full bg-indigo-600/95 px-3 py-1 text-xs font-semibold shadow-sm"
+          class="rounded-full bg-blue-600/95 px-3 py-1 text-xs font-semibold shadow-sm"
           >{info.Zone}</span
         >
       </div>
     </div>
     <!-- 資訊區域 -->
     <div
-      class="flex-1 space-y-2 p-4 text-sm text-indigo-950 dark:text-indigo-100"
+      class="flex-1 space-y-2 p-4 text-sm text-blue-950 dark:text-blue-100"
     >
       <p class="info-row">
         <i class="fas fa-clock info-icon" aria-hidden="true"></i>

@@ -11,7 +11,7 @@
 >
   {#each hotAreas as area}
     <button
-      class="w-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-4 py-2 text-sm font-medium text-white shadow transition hover:from-indigo-600 hover:to-violet-600 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:ring-offset-2 focus:ring-offset-white"
+      class="w-full rounded-full bg-gradient-to-r from-blue-500 to-sky-500 px-4 py-2 text-sm font-medium text-white shadow transition hover:from-blue-600 hover:to-sky-600 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 focus:ring-offset-white"
       on:click={() => onSelect?.(area)}
       data-aos="zoom-in"
       data-aos-delay={100 * (hotAreas.indexOf(area) + 1)}

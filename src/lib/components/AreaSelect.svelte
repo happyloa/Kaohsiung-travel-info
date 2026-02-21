@@ -17,7 +17,7 @@
 <label class="sr-only" for="area-select">選擇行政區域</label>
 <select
   id="area-select"
-  class="w-full mt-4 mb-5 rounded-lg border border-indigo-200 bg-white/80 p-2 text-slate-700 shadow-sm backdrop-blur-sm transition focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-200 dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-200 dark:focus:border-indigo-500 dark:focus:ring-indigo-800"
+  class="w-full mt-4 mb-5 rounded-lg border border-blue-200 bg-white/80 p-2 text-slate-700 shadow-sm backdrop-blur-sm transition focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-200 dark:focus:border-blue-500 dark:focus:ring-blue-800"
   on:change={handleChange}
   bind:value={selected}
 >
